@@ -1,0 +1,15 @@
+<ion-view title="Favorites" id="page2" class=" ">
+    <ion-content padding="true" class="has-header">
+        <ion-list id="favorites-list" class=" ">
+            <ion-item class="item-thumbnail-left item-icon-right" id="{{item.id}}" ng-repeat="item in items">
+                <img ng-src="{{item.img}}"></img>
+                <ion>
+                <rating ng-model="item.rating" max="5" readonly="readOnly"></rating>
+                <h2>{{item.name}}</h2>
+                <p>리뷰 {{item.review}} · 사진 {{item.photo}} · 사장님댓글 {{item.owner}}</p>
+                <p><span class="infoBox" ng-class="{true:'on', false:'off'}[item.isOrderTel]">전화 주문</span><span class="infoBox" ng-class="{true:'on', false:'off'}[item.isBillBefore]">바로 결제</span><span class="infoBox" ng-class="{true:'on', false:'off'}[item.isBillAfter]">만나서 결제</span></p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
